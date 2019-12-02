@@ -28,9 +28,9 @@ export class AppComponent implements AfterViewInit {
 
     ctx.translate(x,y);
 
-    let rIter = 50;
+    let rIter = 35;
 
-    ctx.font = rIter + 'px ' + 'Arial';
+    ctx.font = rIter + 'px ' + 'Courier New';
     ctx.lineWidth = 2;
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'center';
@@ -40,7 +40,7 @@ export class AppComponent implements AfterViewInit {
     let r = rIter;
     let cor = 0;
 
-    var rText = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer in sapien. In dapibus augue non sapien. Nam sed tellus id magna elementum tincidunt. Aenean fermentum risus id tortor.';
+    var rText = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Mauris elementum mauris vitae tortor. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Aliquam ornare wisi eu metus. Fusce tellus. Phasellus rhoncus.';
 
     let text: Letter[] = [];
 
@@ -54,29 +54,33 @@ export class AppComponent implements AfterViewInit {
       angle += cor;
       cor = 0;
 
-      let angset = 0;
-      if(rText[i] === "f" || rText[i] === "r"){
-        angset = 1.5;
-      } else if(rText[i] === "i" || rText[i] === "j" || rText[i] === "l" || rText[i] === "t" || rText[i] === "I"){
-        angset = 2.5
-      } else if(rText[i] === "m" || rText[i] === "w"){
-        angset = -2.5
-      } else if(rText[i] === "." || rText[i] === ","){
-        angset = 0.5
-      }
-      angle += Math.PI/(rIter/angset);
+      // let angset = 0;
+      // if(rText[i] === "f" || rText[i] === "r" || rText[i] === "ř"){
+      //   angset = 1.5;
+      // } else if(rText[i] === "i" || rText[i] === "j" || rText[i] === "l" || rText[i] === "t" || rText[i] === "I" || rText[i] === "í"){
+      //   angset = 0;
+      // } else if( rText[i] === "w" || rText[i] === "M"){
+      //   angset = -2.5
+      // } else if(rText[i] === "." || rText[i] === "," || rText[i] === "y"){
+      //   angset = 0.5
+      // } else if(rText[i] === "m" || rText[i] === "H"){
+      //   angset = 0;
+      // }
+      // angle += Math.PI/(rIter/angset);
 
-      let corset = 0;
-      if(rText[i] === "f" || rText[i] === "i" || rText[i] === "j" || rText[i] === "I"){
-        corset = -2.5;
-      } else if(rText[i] === "m" || rText[i] === "w"){
-        corset = +2;
-      } else if(rText[i] === "l"){
-        corset = -2.8;
-      } else if(rText[i] === "r" || rText[i] === "t"){
-        corset = -1.5;
-      }
-      cor = Math.PI/(rIter/corset);
+      // let corset = 0;
+      // if(rText[i] === "f" || rText[i] === "i" || rText[i] === "j" || rText[i] === "I" || rText[i] === "í"){
+      //   corset = 0;
+      // } else if(rText[i] === "m" || rText[i] === "w"){
+      //   corset = +2;
+      // } else if(rText[i] === "l"){
+      //   corset = 0;
+      // } else if(rText[i] === "r" || rText[i] === "t" || rText[i] === "ř"){
+      //   corset = 0;
+      // } else if(rText[i] === "M" || rText[i] === "H"){
+      //   corset = +1.1;
+      // }
+      // cor = Math.PI/(rIter/corset);
       
       let cy = rIter * Math.sin(angle) - Math.PI/2;
 
