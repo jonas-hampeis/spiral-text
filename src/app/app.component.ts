@@ -22,7 +22,7 @@ export class AppComponent implements AfterViewInit {
     return JSON.stringify(this.rText); 
    }
 
-  dataChanged() {
+  dataChanged($event: any) {
     this.drawText(this.rText);
   }
 
