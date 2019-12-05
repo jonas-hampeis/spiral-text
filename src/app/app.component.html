@@ -1,6 +1,8 @@
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <canvas #canvasEl width=800 height=800 (click)="onClickMe()"></canvas>
+  <canvas #canvasEl id="canvasEl"></canvas>
+  <form>
+    <label>Input your text</label>
+    <br />
+    <textarea name="textInput" [(ngModel)]="rText" (ngModelChange)="dataChanged($event)"></textarea>
+  </form>
 </div>
