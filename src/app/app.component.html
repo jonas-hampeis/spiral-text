@@ -27,5 +27,7 @@
 
     <label for="textInput">Input your text here: </label>
     <textarea name="textInput" id="textInput" [(ngModel)]="rText" (ngModelChange)="dataChanged($event)"></textarea>
+
+    <button id="dlBut" value="Download" dlBut="myImage.jpg" href="" (click)="downloadCanvas()">Download</button>
   </form>
 </div>
