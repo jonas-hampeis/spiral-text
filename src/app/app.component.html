@@ -1,8 +1,31 @@
 <div style="text-align:center">
   <canvas #canvasEl id="canvasEl"></canvas>
   <form>
-    <label>Input your text</label>
+    <p>Welcome to Spiral Text. You can use these settings to modify the spiral and change the text. 
+      Have fun!</p>
+
+    <label for="fontSize">Change font size: </label>
+    <input type="number" id="fontSize" name="fontSize" min="8" max="100" value="35" [(ngModel)]="fontSz" (ngModelChange)="dataChanged($event)">
     <br />
-    <textarea name="textInput" [(ngModel)]="rText" (ngModelChange)="dataChanged($event)"></textarea>
+
+    <label for="font">Change font: </label>
+    <input type="text" list="font-select" name="font" id="font" value="Courier New" [(ngModel)]="fontFa" (ngModelChange)="dataChanged($event)">
+    <datalist id="font-select">
+        <option value="Courier New">Courier New</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Arial">Arial</option>
+        <option value="Roboto">Roboto</option>
+    </datalist>
+    <p id="fontSelect">
+      You can choose any font your browser supports, or there are a few ideas for you if you delete the current value.
+    </p>
+
+    <label for="ctxSize">Change canvas size: </label>
+    <input type="number" id="ctxSize" name="ctxSize" min="100" max="2000" [(ngModel)]="ctxSize" (ngModelChange)="dataChanged($event)">
+    <br />
+
+    <label for="textInput">Input your text here: </label>
+    <textarea name="textInput" id="textInput" [(ngModel)]="rText" (ngModelChange)="dataChanged($event)"></textarea>
   </form>
 </div>
